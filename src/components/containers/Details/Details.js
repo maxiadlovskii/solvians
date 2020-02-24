@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useMemo} from 'react'
 import {Details} from "../../presentational/Detais/Details";
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -9,10 +9,10 @@ export const DetailsContainer = () => {
     const dispatch = useDispatch();
     const { [linkParams.countryCode]: countryCode } = useParams();
     const { isFetching, collection, isFailed } = useSelector( store => store.countryList);
-    useEffect(()=>{
+    useMemo(()=>{
         if(!collection.has(countryCode)){
             dispatch(getCountry(countryCode));
         }
-    }, [countryCode]);
+    }, [countryCode, dispatch, collection]);
     return <Details country={collection.get(countryCode)} isFetching={isFetching} isFailed={isFailed}/>
 };

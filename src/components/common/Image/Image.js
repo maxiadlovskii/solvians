@@ -4,9 +4,9 @@ import {Loader} from "../Loader/Loader";
 import styles from './Image.module.scss'
 import {skeletons} from "../../../constants";
 
-export const Image = ({ src, width, heightRation = 100 }) => {
+export const Image = ({ src, width, alt = 'image', heightRation = 100 }) => {
     const [isLoaded] = useImageLoader(src);
-    return <>{isLoaded ? <img src={src} width={width}/> :
+    return <>{isLoaded ? <img src={src} width={width} alt={alt}/> :
             <div style={{
         width,
         position: 'relative',

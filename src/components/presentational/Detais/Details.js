@@ -34,7 +34,7 @@ export const Details = ({ country = {}, isFetching, isFailed }) => {
                 <div className={styles.row}>
                     <label className={classNames(styles.label, styles.cell)}>{countryModel.BORDERS}</label>
                     <span className={classNames(styles.value, styles.cell, styles.borders)}>{
-                        borders.map(country => <Link className={styles.link}
+                        borders.map(country => <Link className={styles.link} key={country}
                                                      to={`${links.LIST}/${country}`}>{country}</Link>)
                     }</span>
                 </div>

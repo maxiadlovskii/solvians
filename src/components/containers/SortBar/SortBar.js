@@ -14,6 +14,6 @@ export const SortBarContainer = () => {
             field: newField,
             direction: newDirection
         }))
-    }, [direction, field]);
+    }, [direction, field, dispatch]);
     return <SortBar direction={direction} itemOnClick={itemOnClick} sortedBy={field}/>
 };

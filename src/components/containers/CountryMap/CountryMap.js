@@ -20,6 +20,6 @@ export const CountryMap = () => {
         if(!polygons[countryCode] && name){
             dispatch(getCountryPolygon({ countryCode, name }))
         }
-    }, [countryCode, polygons, name]);
+    }, [countryCode, polygons, name, dispatch]);
     return <>{isSuccess ? <GoogleMap latLng={latLng} polygon={polygons[countryCode]}/> : <Loader />}</>
 }

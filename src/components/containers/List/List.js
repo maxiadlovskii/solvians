@@ -12,9 +12,9 @@ export const ListContainer = () => {
     const countryList = useSelector( store => countryListSelector(store));
     const onItemClick = useCallback(countryCode=>{
         history.push(`${links.LIST}/${countryCode}`)
-    }, []);
+    }, [history]);
     useEffect(()=>{
         dispatch(getCountryList());
-    }, []);
+    }, [dispatch]);
     return <List list={countryList} isFetching={isFetching} onItemClick={onItemClick}/>
 }

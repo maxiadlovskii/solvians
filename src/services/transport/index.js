@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { handleError } from './failors'
 import qs from 'query-string'
-var instance = axios.create();
 //instance.defaults.headers.common = {};
 export const transportService = async (path, options) => {
     let { origin, pathname, search } = new URL(path);

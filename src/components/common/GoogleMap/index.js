@@ -5,9 +5,9 @@ import styles from './googleMap.module.scss'
 export const GoogleMap = ({ latLng, polygon }) => {
     const [[lat, lng], setLatLng] = useState([0, 0]);
     const [path, setPath] = useState([]);
-    useMemo(()=>{ {
+    useMemo(()=>{
         latLng && setLatLng(latLng)
-    }}, [latLng]);
+    }, [latLng]);
     useMemo(()=>setPath(polygon), [polygon]);
     const polygonRef = useRef(null);
     const listenersRef = useRef([]);
