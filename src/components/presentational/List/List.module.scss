@@ -1,0 +1,9 @@
+@import "../../../styles/vars-mixins";
+
+.list {
+  margin-top: $bar-height;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  color: $main-color;
+}

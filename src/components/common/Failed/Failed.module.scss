@@ -1,0 +1,6 @@
+@import "../../../styles/vars-mixins";
+
+.wrapper {
+  @include fill-all;
+  @include flex-center
+}

@@ -1,0 +1,21 @@
+@import "../../../styles/vars-mixins";
+
+.wrapper {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid $main-color;
+  @include box-shadow;
+  background-color: $third-color;
+  cursor: pointer;
+}
+
+.info {
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+  flex-grow: 1;
+}

@@ -1,0 +1,39 @@
+@import "../../../styles/vars-mixins";
+.wrapper {
+  display: flex;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.map {
+  min-height: 100%;
+  width: 100%;
+}
+.table {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
+}
+
+.row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
+}
+
+.cell {
+  border: 1px solid $main-color;
+  color: $main-color;
+  padding: 10px;
+}
+
+.link {
+  padding: 0 5px;
+}
+
+.borders {
+  display: flex;
+  flex-wrap: wrap;
+}
