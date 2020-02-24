@@ -8,15 +8,12 @@ export const normalizeCountryData = (data = [], key=countryModel.ALPHA_3_CODE) =
     }, new Map([]))
 };
 export const getPolygonData = data => {
-    const coordinates = data[0][polygonApi.GEO_JSON][polygonApi.COORDINATES];
-    const polygons = data[0][polygonApi.GEO_JSON][polygonApi.TYPE] === 'MultiPolygon' ? coordinates : [coordinates];
-    console.log(polygons.length);
+    const geoJSON = data.find( item => ['MultiPolygon', 'Polygon'].includes(item[polygonApi.GEO_JSON][polygonApi.TYPE]))[polygonApi.GEO_JSON];
+    const coordinates = geoJSON[polygonApi.COORDINATES];
+    const polygons = geoJSON[polygonApi.TYPE] === 'MultiPolygon' ? coordinates : [coordinates];
     const mappedData = polygons.map( item => {
-        console.log(item[0]);
         return item[0].map(([lng, lat]) => ({lat, lng}))});
-    console.log(mappedData);
     return mappedData
-
 };
 
 export const compareValues = (key, order = orders.ASC) => {

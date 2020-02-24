@@ -16,7 +16,6 @@ export const Details = ({ country = {}, isFetching, isFailed }) => {
         [countryModel.LAT_LNG]: latLng,
         ...rest
     } = country;
-
     return <>
             { isFetching && <Loader /> }
             { isFailed && <Failed/> }

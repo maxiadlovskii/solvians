@@ -5,7 +5,8 @@ import {countryModel} from "../../../constants/models";
 import {SortBarContainer} from "../../containers/SortBar/SortBar";
 import {Loader} from "../../common/Loader/Loader";
 
-export const List = ({ list, onItemClick, isFetching }) => (
+export const List = ({ list, onItemClick, isFetching }) => {
+    return (
     <>
         {
             isFetching ? <Loader /> : <>
@@ -18,4 +19,4 @@ export const List = ({ list, onItemClick, isFetching }) => (
             </>
         }
     </>
-);
+)};

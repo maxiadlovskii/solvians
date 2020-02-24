@@ -10,6 +10,8 @@
   @include box-shadow;
   background-color: $third-color;
   cursor: pointer;
+  max-height: 170px;
+  overflow: hidden;
 }
 
 .info {

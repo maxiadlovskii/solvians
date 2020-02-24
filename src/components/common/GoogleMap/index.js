@@ -6,7 +6,6 @@ export const GoogleMap = ({ latLng, polygon }) => {
     const [[lat, lng], setLatLng] = useState([0, 0]);
     const [path, setPath] = useState([]);
     useMemo(()=>{ {
-        console.log(latLng);
         latLng && setLatLng(latLng)
     }}, [latLng]);
     useMemo(()=>setPath(polygon), [polygon]);

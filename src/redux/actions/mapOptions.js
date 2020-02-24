@@ -3,8 +3,8 @@ import {getPolygonData} from "../../utils";
 import {GET_COUNTRY_POLYGON} from "../../constants/actions";
 import {POLYGON_API } from '../../constants/api'
 
-export const getCountryPolygon = ({ countryCode }) => actionCreator({
-    url: `${POLYGON_API}search.php?q=${countryCode}&polygon_geojson=1&format=json`,
+export const getCountryPolygon = ({ countryCode, name }) => actionCreator({
+    url: `${POLYGON_API}search.php?q=${name}&polygon_geojson=1&format=json`,
     params: {
         method: 'get'
     },
